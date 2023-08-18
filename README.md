@@ -1,47 +1,55 @@
 # Drag and Dropable Todo App ( react + typescript )
 
-This project was made on React + TypeScript. <br />
-Additional packages install :  react-beautiful-dnd,  scss
+## Basic Funtionality
+User can add a todo by click of `GO` button or with pressing `Enter on keyboard`.\
+By default Todo will set in Active Todos List.
 
-## Available Scripts
+3 option provided for user. `EDIT`, `DELETE`, `DONE`.
 
-In the project directory, you can run:
+by clicking `EDIT` , use can edit the list and save it by pressing `Enter on keyboard`.\
+by clicking `DONE`, it will shift it to completed list.
 
-### `npm start`
+Items in Completed Todo List is not editable. to edit, iether click `UNDO` or `drag and drop` to active list.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Drag n Drop Funtionality
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Use can **sort the order of list** by `draging and dropping`  in active list and completed list.\
+and User can also change the status of todo too, from active to completed and visa versa.
 
-### `npm test`
+## Learning and chalenges
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Package use for drag and drop functality : <a href="https://www.npmjs.com/package/react-beautiful-dnd">react-beautifull-dnd </a> .\
+Documentaion : <a href="https://github.com/atlassian/react-beautiful-dnd">github.com/atlassian/react-beautiful-dnd</a>
 
-### `npm run build`
+**a)** For JS users, instating packages will work, but for ts user, you have to install its type also.\
+**b)** A common errror will apear, `dragable id not found`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**solution a)** Either remove `strict-mode` from `index.js`/`index.ts`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**best approach )** create a wrapper or custom for `< Droppable />`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+code : `customDroppableDnd.ts`
+```
+import { useEffect, useState } from "react";
+import { Droppable, DroppableProps } from "react-beautiful-dnd";
+export const StrictModeDroppable = ({ children, ...props }: DroppableProps) => {
+  const [enabled, setEnabled] = useState(false);
+  useEffect(() => {
+    const animation = requestAnimationFrame(() => setEnabled(true));
+    return () => {
+      cancelAnimationFrame(animation);
+      setEnabled(false);
+    };
+  }, []);
+  if (!enabled) {
+    return null;
+  }
+  return <Droppable {...props}>{children}</Droppable>;
+};
+```
 
-### `npm run eject`
+Insted of using.\
+```import { Droppable } from "react-beautiful-dnd";```\
+use\
+```import { StrictModeDroppable } from "../util/customDroppableDnd";```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
