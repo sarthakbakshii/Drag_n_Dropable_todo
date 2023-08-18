@@ -86,7 +86,11 @@ const SingleTodo = ({
 
           <div className="flex flex-center flex-middle fs-20">
             <span className="icon" onClick={editHandler}>
-              ✏️ <span className="fs-15">edit</span>
+              {!visibleStatus && (
+                <>
+                  ✏️ <span className="fs-15">edit</span>
+                </>
+              )}
             </span>
             <span className="icon" onClick={handleDelete(todo.id)}>
               🗑️ <span className="fs-15">delete</span>
