@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Drag and Dropable Todo App ( react + typescript )
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was made on React + TypeScript. <br />
+Additional packages install :  react-beautiful-dnd,  scss
 
 ## Available Scripts
 
