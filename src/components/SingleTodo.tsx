@@ -84,7 +84,7 @@ const SingleTodo = ({
             </span>
           )}
 
-          <div className="flex flex-center flex-middle swipe-in fs-20">
+          <div className="flex flex-center flex-middle fs-20">
             <span className="icon" onClick={editHandler}>
               ✏️ <span className="fs-15">edit</span>
             </span>

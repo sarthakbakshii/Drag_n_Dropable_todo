@@ -1,21 +1,25 @@
 .flex{
     display: flex;
-}
+} // use
 .flex-center{
     justify-content: center;
 }
+
 .flex-start{
     justify-content: start;
-}
+} // use
+
 .flex-between{
     justify-content: space-between;
-}
+} // use
+
 .flex-middle{
     align-items: center;
-}
+} // use
+
 .ai-start{
     align-items: start;
-}
+} // use
 
 .flex-row{
     flex-direction: row;
@@ -23,7 +27,8 @@
 
 .flex-coloum{
     flex-direction: column;
-}
+} // use
+
 
 .flex-wrap{
     flex-wrap: wrap;
@@ -37,7 +42,8 @@
 
 .gap-5{
     gap: 5px;
-}
+} // use
+
 .gap-10{
     gap: 10px;
 }
