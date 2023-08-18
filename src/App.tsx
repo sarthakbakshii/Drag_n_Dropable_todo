@@ -68,7 +68,7 @@ const App = () => {
         <h2 className=" heading ">{Heading.MAIN}</h2>
         <InputField todo={todo} handleAdd={handleAdd} setTodo={setTodo} />
 
-        <div className="mt-20 flex flex-start ai-start listContainer">
+        <div className="mt-20 flex flex-start gap-30 ai-start listContainer">
           <TodoList
             allTodo={allTodo}
             setAllTodo={setAllTodo}

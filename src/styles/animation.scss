@@ -1,42 +1,8 @@
-@keyframes movein {
-    0% {
-        position: relative;
-        left: 20px;
-        opacity: 0%;
-    }
-    100%{
-        position: relative;
-        left: 0px;
-        opacity: 100%;
-    }
+.zoom-in {
+  transition: 0.2s;
+  border: none;
 }
-@keyframes moveout {
-
-    0%{
-        position: relative;
-        left: 0px;
-        opacity: 100%;
-    }
-    100% {
-        position: relative;
-        left: 20px;
-        opacity: 0%;
-    }
-}
-.swipe-in{
-    animation : movein 1s
-}
-.swipe-out{
-      animation : moveout 1s
-}
-
-// use
-
-.zoom-in{
-    transition: 0.2s;
-    border: none;
-}
-.zoom-in:hover{
-    transform: scale(1.03);
-    border: 1px solid rgba(128, 128, 128, 0.314);
+.zoom-in:hover {
+  transform: scale(1.03);
+  border: 1px solid rgba(128, 128, 128, 0.314);
 }

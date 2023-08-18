@@ -1,10 +1,8 @@
 @import url("./styles/flex.scss");
 @import url("./styles/spacing.scss");
-@import url("./styles/grid.scss");
 @import url("./styles/color.scss");
 @import url("./styles/util.scss");
 @import url("./styles/dimension.scss");
-@import url("./styles/position.scss");
 @import url("./styles/animation.scss");
 @import url("./styles/font.scss");
 @import url("./styles/border.scss");
@@ -105,9 +103,6 @@
   outline: none;
 }
 
-/* .input{
-  padding: 0px 0px 0px 0px;
-} */
 
 .icon {
   margin-left: 5px;
